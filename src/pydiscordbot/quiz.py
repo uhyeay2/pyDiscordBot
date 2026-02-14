@@ -39,7 +39,7 @@ async def run_quiz(ctx: commands.Context, bot: commands.Bot, session_id: int, qu
             duration_ms = (end_perf - start_perf) * 1000
             user_choice = msg.content.upper()
             user_answer_text = option_map.get(user_choice)
-            is_correct = user_answer_text == q.correct_answer,
+            is_correct = user_answer_text == q.correct_answer
             score += 1 if is_correct else 0
 
             database.save_result(QuestionResult(
